@@ -1,0 +1,48 @@
+<div class="main-app-grid">
+    <div class="main-header">
+        header
+    </div>
+    <div class="main-content">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th>
+                        <button (click)="addRow()" type="button" class="btn btn-info">+</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of contacts; let i = index">
+                    <th scope="row">
+                        <input [(ngModel)]="row.ID" type="text" class="form-control" placeholder="ID"></th>
+                    <td>
+                        <input [(ngModel)]="row.first_name" type="text" class="form-control" placeholder="ID"></th>
+
+                    </td>
+                    <td>
+                        <input [(ngModel)]="row.last_name" type="text" class="form-control" placeholder="ID"></th>
+                    </td>
+                    <td>
+                        <input [(ngModel)]="row.email" type="text" class="form-control" placeholder="ID"></th>
+
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="save()" type="button" class="btn btn-success">Save</button>
+                            <button (click)="delete(i)" type="button" class="btn btn-danger">X</button>
+
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main-footer">
+        footer
+    </div>
+</div>
